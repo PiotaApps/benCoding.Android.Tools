@@ -104,7 +104,7 @@ public class PlatformProxy  extends KrollProxy {
 		Log.d(AndroidtoolsModule.MODULE_FULL_NAME, "Scheduling Restart");
 		//Schedule an Alarm to restart after a delay
 		AlarmManager mgr = (AlarmManager)TiApplication.getInstance().getApplicationContext().getSystemService(TiApplication.ALARM_SERVICE);		
-		mgr.set(AlarmManager.RTC, System.currentTimeMillis() + DELAY_OFFSET, pendingIntent);		
+		mgr.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + DELAY_OFFSET, pendingIntent);		
 		Log.d(AndroidtoolsModule.MODULE_FULL_NAME, "Clean-up and Exit");		
 		//Tell Ti to do some clean-up
 		TiApplication.getInstance().beforeForcedRestart();
